@@ -1,0 +1,382 @@
+/* Portfolio Styles */
+.portfolioContainer {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: #000000;
+  color: #f5f5f7;
+  overflow-x: hidden;
+}
+
+/* CSS Variables */
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #161617;
+  --text-primary: #f5f5f7;
+  --text-secondary: #86868b;
+  --accent-gradient: linear-gradient(90deg, #f35626, #feab3a, #28c840, #00d4ff, #6a3cff, #ff0080);
+}
+
+/* Header/Nav */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  z-index: 10000;
+  background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0));
+  backdrop-filter: blur(4px);
+}
+
+.brand {
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.navLink, .navLinkActive {
+  text-decoration: none;
+  color: #86868b;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover, .navLinkActive {
+  color: #f5f5f7;
+}
+
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: radial-gradient(ellipse at center, #161617 0%, #000000 100%);
+}
+
+.heroContent {
+  text-align: center;
+  z-index: 10;
+  padding: 0 2rem;
+  transform: translateY(0);
+  animation: fadeInUp 1.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heroTitle {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #f35626, #feab3a, #28c840, #00d4ff, #6a3cff, #ff0080);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.subtitle {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: #86868b;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+.scrollIndicator svg {
+  width: 24px;
+  height: 40px;
+  stroke: #86868b;
+}
+
+/* 3D Canvas Container */
+.canvasContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* About Section */
+.about {
+  min-height: 100vh;
+  padding: 10rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(180deg, #000000 0%, #161617 50%, #000000 100%);
+}
+
+.aboutContent {
+  max-width: 900px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+.aboutContent.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.aboutText {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  line-height: 1.6;
+  color: #86868b;
+  margin-bottom: 3rem;
+}
+
+.highlight {
+  color: #f5f5f7;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.highlight:hover {
+  background: linear-gradient(90deg, #f35626, #feab3a, #28c840, #00d4ff, #6a3cff, #ff0080);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: translateY(-2px);
+}
+
+/* Experience Card */
+.experienceCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem 0;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.experienceHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.experienceText {
+  flex: 1;
+}
+
+.shopifyLogo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  width: 200px;
+  height: 200px;
+}
+
+.modelPlaceholder {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  color: #86868b;
+  font-size: 0.9rem;
+}
+
+.experienceCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #f35626, #feab3a, #28c840, #00d4ff, #6a3cff, #ff0080);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.experienceCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.experienceCard:hover::before {
+  transform: translateX(0);
+}
+
+.company {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.role {
+  color: #86868b;
+  margin-bottom: 1rem;
+}
+
+/* Contact Section */
+.contact {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contactLinks {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.contactLink {
+  padding: 1rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  text-decoration: none;
+  color: #f5f5f7;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactLink::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.contactLink:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.contactLink:hover {
+  border-color: #f5f5f7;
+  transform: translateY(-3px);
+}
+
+/* Floating Elements */
+.floatingShapes {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.shape1, .shape2, .shape3 {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #f35626, #feab3a, #28c840, #00d4ff, #6a3cff, #ff0080);
+  opacity: 0.03;
+  animation: float 20s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-30px) rotate(120deg); }
+  66% { transform: translateY(30px) rotate(240deg); }
+}
+
+.shape1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.shape2 {
+  width: 200px;
+  height: 200px;
+  top: 60%;
+  right: 10%;
+  animation-delay: 5s;
+}
+
+.shape3 {
+  width: 150px;
+  height: 150px;
+  bottom: 10%;
+  left: 50%;
+  animation-delay: 10s;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  
+  .experienceHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .modelPlaceholder {
+    width: 80px !important;
+    height: 80px !important;
+  }
+}

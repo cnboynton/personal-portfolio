@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chester Boynton - Creative Problem Solver</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header>
+        <div class="brand">Chester Boynton</div>
+        <nav>
+            <a href="./index.html" class="active">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./projects.html">Projects</a>
+            <a href="./contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="floating-shapes">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+    </div>
+
+    <div class="canvas-container">
+        <canvas id="three-canvas"></canvas>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Chester Boynton</h1>
+            <p class="subtitle">Creative Problem Solver</p>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 40" fill="none">
+                <rect x="1" y="1" width="22" height="38" rx="11" stroke="currentColor" stroke-width="2"></rect>
+                <circle cx="12" cy="10" r="3" fill="currentColor"></circle>
+            </svg>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-content">
+            <h2 class="section-title">Crafting Digital Experiences</h2>
+            <p class="about-text">
+                I'm a <span class="highlight">Computer Science student</span> with a passion for 
+                creating beautiful, intuitive interfaces that push the boundaries of web technology. 
+                My approach combines <span class="highlight">technical precision</span> with 
+                <span class="highlight">creative vision</span>, turning complex problems into elegant solutions.
+            </p>
+            <p class="about-text">
+                Whether it's implementing smooth animations, designing responsive layouts, or 
+                optimizing performance, I believe great frontend development is about creating 
+                experiences that feel <span class="highlight">effortless</span> and 
+                <span class="highlight">delightful</span> for users.
+            </p>
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="experience-text">
+                        <h3 class="company">Shopify</h3>
+                        <p class="role">Software Engineering Intern</p>
+                        <p class="about-text">
+                            Contributed to building scalable e-commerce solutions, working with 
+                            <span class="highlight">React</span> and <span class="highlight">TypeScript</span> 
+                            to enhance merchant experiences and streamline user workflows.
+                        </p>
+                    </div>
+                    <div class="shopify-logo">
+                        <model-viewer 
+                            src="./assets/shopify.glb" 
+                            alt="Shopify 3D Logo"
+                            auto-rotate 
+                            camera-controls
+                            style="width: 120px; height: 120px;">
+                        </model-viewer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="about-text">Ready to build something amazing together?</p>
+        <div class="contact-links">
+            <a href="mailto:chester@example.com" class="contact-link">Email</a>
+            <a href="https://github.com/chesterboynton" class="contact-link">GitHub</a>
+            <a href="https://linkedin.com/in/chesterboynton" class="contact-link">LinkedIn</a>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="module">
+        import { initPage } from './assets/js/main.js';
+        initPage();
+    </script>
+</body>
+</html>
+
+
