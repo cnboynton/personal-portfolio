@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chester Boynton - Creative Problem Solver</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
     <div class="cursor"></div>
@@ -70,15 +77,6 @@
                             to enhance merchant experiences and streamline user workflows.
                         </p>
                     </div>
-                    <div class="shopify-logo">
-                        <model-viewer 
-                            src="./assets/shopify.glb" 
-                            alt="Shopify 3D Logo"
-                            auto-rotate 
-                            camera-controls
-                            style="width: 120px; height: 120px;">
-                        </model-viewer>
-                    </div>
                 </div>
             </div>
         </div>
@@ -94,7 +92,6 @@
         </div>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script type="module">
         import { initPage } from './assets/js/main.js';
         initPage();

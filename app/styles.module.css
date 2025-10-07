@@ -1,9 +1,18 @@
+/* Custom Font */
+@font-face {
+  font-family: 'ADegaSerif';
+  src: url('../assets/ADegaSerifBold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Portfolio Styles */
 .portfolioContainer {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: 'Instrument Serif', serif;
   background: #000000;
   color: #f5f5f7;
   overflow-x: hidden;
@@ -34,23 +43,9 @@
 }
 
 .brand {
-  font-weight: 600;
+  font-weight: 200;
 }
 
-.nav {
-  display: flex;
-  gap: 1rem;
-}
-
-.navLink, .navLinkActive {
-  text-decoration: none;
-  color: #86868b;
-  transition: color 0.2s ease;
-}
-
-.navLink:hover, .navLinkActive {
-  color: #f5f5f7;
-}
 
 
 /* Hero Section */
@@ -62,13 +57,13 @@
   align-items: center;
   position: relative;
   background: radial-gradient(ellipse at center, #161617 0%, #000000 100%);
+  overflow: hidden;
 }
 
 .heroContent {
   text-align: center;
   z-index: 10;
   padding: 0 2rem;
-  transform: translateY(0);
   animation: fadeInUp 1.5s ease-out;
 }
 
@@ -85,7 +80,7 @@
 
 .heroTitle {
   font-size: clamp(3rem, 8vw, 6rem);
-  font-weight: 600;
+  font-weight: 200;
   line-height: 1.1;
   margin-bottom: 1rem;
   background: linear-gradient(90deg, #f35626, #feab3a, #28c840, #00d4ff, #6a3cff, #ff0080);
@@ -103,18 +98,20 @@
 
 .subtitle {
   font-size: clamp(1.2rem, 3vw, 1.8rem);
-  color: #86868b;
+  color: #dcdcdc;
   font-weight: 400;
   margin-bottom: 2rem;
   letter-spacing: -0.02em;
 }
 
 .scrollIndicator {
-  position: absolute;
+  position: fixed;
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   animation: bounce 2s infinite;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  z-index: 10;
 }
 
 @keyframes bounce {
@@ -142,7 +139,7 @@
 /* About Section */
 .about {
   min-height: 100vh;
-  padding: 10rem 2rem;
+  padding: 8rem 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -152,9 +149,9 @@
 
 .aboutContent {
   max-width: 900px;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 1s ease-out;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .aboutContent.visible {
@@ -165,13 +162,13 @@
 .sectionTitle {
   font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: 2rem;
-  font-weight: 600;
+  font-weight: 200;
 }
 
 .aboutText {
   font-size: clamp(1.1rem, 2vw, 1.3rem);
   line-height: 1.6;
-  color: #86868b;
+  color: #dcdcdc;
   margin-bottom: 3rem;
 }
 
@@ -196,10 +193,10 @@
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
-  padding: 2rem;
+  padding: 1rem;
   margin: 2rem 0;
   backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   position: relative;
   overflow: hidden;
 }
@@ -208,7 +205,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .experienceText {
@@ -222,8 +219,10 @@
   justify-content: center;
   position: relative;
   z-index: 10;
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .modelPlaceholder {
@@ -262,7 +261,7 @@
 
 .company {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 200;
   margin-bottom: 0.5rem;
 }
 
@@ -273,7 +272,7 @@
 
 /* Contact Section */
 .contact {
-  padding: 5rem 2rem;
+  padding: 1rem 2rem;
   text-align: center;
 }
 
